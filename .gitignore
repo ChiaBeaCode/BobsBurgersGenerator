@@ -6,4 +6,3 @@ node_modules
 .env
 README.md
 dist
-netlify.toml
