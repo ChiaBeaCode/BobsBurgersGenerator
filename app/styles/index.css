@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #F0F0F0;
+}
+
+/* ================ Banner ================ */
+.header{
+    max-width: 90%;
+    text-align: center;
+    display: block;
+    font-weight: 800;
+    color: #303030;
+    background: linear-gradient(135deg, #00feba, #5b548a);
+    border-radius: 5px;
+    margin: 15px auto 0;
+    padding: 20px 30px 0px;
+    text-align: center;
+}
+.header h1{
+    color: #F02135;
+    background-color: #F5E120;
+    border: 8px solid #F02135;
+    border-radius: 5px;
+    font-size: 40px;
+    text-shadow:  -3px -1px 1px #000;
+}
+.header p{
+    font-size: 20px;
+    padding: 20px 0 30px;
+}
+
+/* ================ Holds everything, aside from header ================ */
+.card{
+    width: 90%;
+    /* max-width: 470px; */
+    max-width: 700px;
+    background: linear-gradient(135deg, #00feba, #5b548a);
+    color: #fff;
+    margin: 40px auto 0;
+    border-radius: 40px;
+    padding: 25px 35px;
+    text-align: center;
+}
+
+.card h1{
+    font-size: 40px;
+    font-weight: 500;
+    padding-bottom: 15px;
+}
+
+/* ================ Search Bar and Button ================ */
+.search{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.search input{
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    color: #555;
+    padding: 10px 25px;
+    height: 60px;
+    border-radius: 30px;
+    flex: 1;
+    margin-right: 16px;
+    font-size: 18px;
+}
+.search button{
+    border: 0;
+    outline: 0;
+    background: #ebfffc; 
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.search button svg{
+    margin-top: 4px;
+    font-size: 40px;
+}
+
+/* ================ Character info block ================ */
+.infoBlock{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 20px;
+}
+.infoBlock div{
+    display: flex;
+    flex-direction: column;
+}
+
+.characterImg{
+    max-width: 250px;
+    max-height: 320px;
+    margin-right: 20px;
+    border: 5px double #555;
+    border-radius: 10px;
+}
+.castLogo{
+    width: 425px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* ================ Character's details/ line arrangement ================ */
+.head{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    font-weight: 600;
+    letter-spacing: .6px;
+    /* color: #5b548a; */
+    color: #303030;
+    /* text-shadow: -1px 0 #303030, 0 1px #303030, 1px 0 #303030, 0 -1px #303030; */
+}
+.info{
+    /* color: #303030; */
+    display: block;
+    text-indent: 10px;
+    text-align: left;
+}
+.line{
+    display: flex;
+    flex-direction: row;
+    line-height: 22px;
+
+}
+
+/* 
+.name, .image, .hairColor, .age, .gender, .allOccupations, .occupation, .relatives, .firstEpisode, .voicedBy {
+}
+name, relatives, image, occupation, allOccupations, wikiUrl */

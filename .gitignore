@@ -1,0 +1,9 @@
+node_modules
+
+/.cache
+/public/build
+/.netlify
+.env
+README.md
+dist
+netlify.toml
