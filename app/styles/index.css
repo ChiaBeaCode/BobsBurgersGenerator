@@ -11,29 +11,41 @@ body{
 
 /* ================ Banner ================ */
 .header{
-    max-width: 90%;
-    text-align: center;
     display: block;
-    font-weight: 800;
-    color: #303030;
     background: linear-gradient(135deg, #00feba, #5b548a);
-    border-radius: 5px;
-    margin: 15px auto 0;
-    padding: 20px 30px 0px;
+    color: #303030;
     text-align: center;
+    font-weight: 800;
+    text-align: center;
+    max-width: 85%;
+    border-radius: 5px;
+    margin: 20px auto 0;
+    padding: 20px 30px 0px;
 }
+
 .header h1{
     color: #F02135;
     background-color: #F5E120;
     border: 8px solid #F02135;
     border-radius: 5px;
+    /* width: 70%; */
+    margin: 0 auto;
     font-size: 40px;
     text-shadow:  -3px -1px 1px #000;
 }
 .header p{
     font-size: 20px;
     padding: 20px 0 30px;
+
 }
+.header img {
+    position: fixed;
+    width: 65px;
+    border: 3px solid #78909a;
+    border-radius: 20px;
+    top: 10px;
+    left: 30px;
+  }
 
 /* ================ Holds everything, aside from header ================ */
 .card{
@@ -135,6 +147,44 @@ body{
     flex-direction: row;
     line-height: 22px;
 
+}
+
+@media (max-width: 700px) {
+    .header h1{
+        font-size: 30px;
+        text-shadow: -2.5px -1px 1px #000;
+    }
+    .header p {
+        font-size: 18px;
+    }
+    .search input {
+        height: 50px;
+        font-size: 16px;
+    }
+    .search button {
+        height: 50px;
+        width: 50px;
+    }
+    .search button svg{
+        font-size: 30px;
+    }
+    .castLogo {
+        width: 60vw;
+    }
+}
+@media (max-width: 560px) {
+    .header img{
+        width: 55px;
+    }
+}
+@media (max-width: 500px) {
+    .header h1{
+        font-size: 25px;
+        text-shadow: -1px -1px 1px #000;
+    }
+    .header p {
+        font-size: 14px;
+    }
 }
 
 /* 
