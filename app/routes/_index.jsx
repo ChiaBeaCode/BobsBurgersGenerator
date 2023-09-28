@@ -22,10 +22,11 @@ export default function App() {
       setBadEntry(true);
     } else {
       const response = await fetch(
-        `https://bobsburgers-api.herokuapp.com/v2/characters/${userInput}`
+        `https://bobsburgers-api.herokuapp.com/characters/${userInput}`
       )
         .then((response) => {
           if (response.status != 200) {
+            console.log("Error Response Status: ", response.status)
             NotValid(response.status);
           } else {
             return response.json();
@@ -35,7 +36,6 @@ export default function App() {
           setBadEntry(false);
           return data;
         });
-      console.log(response);
       setCharacter(response);
     }
   }
