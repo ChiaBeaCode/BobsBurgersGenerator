@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import styles from "~/styles/index.css";
 import logo from "~/images/logo.png";
 import bobsburgerscharacters from "~/images/bobsburgerscharacters.jpg";
-import { NotValid } from "../components/errors";
+import { InvalidEntry, NotValid } from "../components/errors";
 import { BiSearch } from "react-icons/bi";
 import { CharacterCard } from "../components/card";
 
@@ -25,8 +25,8 @@ export default function App() {
         `https://bobsburgers-api.herokuapp.com/characters/${userInput}`
       )
         .then((response) => {
-          if (response.status != 200) {
-            console.log("Error Response Status: ", response.status)
+          if (response.status !== 200) {
+            console.log("Error Response Status: ", response.status);
             NotValid(response.status);
           } else {
             return response.json();
@@ -42,41 +42,44 @@ export default function App() {
 
   return (
     <div>
-      <div className="header">
+      <header className="header">
         <a href="https://chiabeacode.netlify.app/">
           <img src={logo} alt="logo"></img>
         </a>
-        <h1>Bob's Burger Generator</h1>
-        <p>
-          Learn more about your favorite characters! Simply input a number 1 -
-          496 for a surprise character!
-        </p>
-      </div>
+        <section>
+          <h1>Bob's Burger Generator</h1>
+          <p>
+            Learn more about your favorite characters! Simply input a number 1 -
+            496 for a surprise character!
+          </p>
+        </section>
+      </header>
 
       <div className="card">
-        <div className="search">
-          <input
-            id="getCharacter"
-            ref={userInputRef}
-            type="text"
-            placeholder="Enter random number...."
-            onKeyDown={(event) => {
-              if (event.key === "Enter" || event.key === "Return") {
-                searchCharacters();
-              }
-            }}
-          ></input>
-          <button onClick={searchCharacters}>
-            <BiSearch />
-          </button>
-        </div>
-        {badEntry ? (
-          <p style={{ color: "red" }}>
-            Invalid entry, please input a number 1 - 496
-          </p>
-        ) : (
-          <div></div>
-        )}
+        <section
+          style={{
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <div className="search">
+            <input
+              id="getCharacter"
+              ref={userInputRef}
+              type="text"
+              placeholder="Enter random number...."
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === "Return") {
+                  searchCharacters();
+                }
+              }}
+            ></input>
+            <button onClick={searchCharacters}>
+              <BiSearch />
+            </button>
+          </div>
+          {badEntry ? <InvalidEntry /> : null}
+        </section>
 
         <div>
           {character ? (

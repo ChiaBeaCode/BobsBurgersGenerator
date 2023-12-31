@@ -14,11 +14,14 @@ export function CharacterCard({ character }) {
 
   function formatItem(item) {
     const age = /(^\d\d)/.test(item);
-    if (Array.isArray(item) && item.length != 0) {
+    const link = /(https:\/\/)/.test(item)
+    if (Array.isArray(item) && item.length !== 0) {
       const infoList = item.map((obj) => obj.name);
       return infoList.join(", ");
     } else if (age) {
       return parseInt(item);
+    } else if (link) {
+      return <a href={item}>{item}</a>
     } else {
       return item;
     }
@@ -36,7 +39,7 @@ export function CharacterCard({ character }) {
 
       <div>
         {Object.keys(character).map((key) => {
-          if (infoWanted.includes(key) && character[key].length != 0) {
+          if (infoWanted.includes(key) && character[key].length !== 0) {
             return (
               <div key={key} className="line">
                 <p className="head">{capitalizeFirstLetter(key)}: </p>
