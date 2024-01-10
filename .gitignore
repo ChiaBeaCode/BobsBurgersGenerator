@@ -4,5 +4,4 @@ node_modules
 /public/build
 /.netlify
 .env
-README.md
 dist
