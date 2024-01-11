@@ -47,7 +47,7 @@ export default function App() {
           <img src={logo} alt="logo"></img>
         </a>
         <section>
-          <h1>Bob's Burger Generator</h1>
+          <h1>Bob's Burgers Generator</h1>
           <p>
             Learn more about your favorite characters! Simply input a number 1 -
             496 for a surprise character!
